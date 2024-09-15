@@ -33,9 +33,9 @@ This example is spoken in a different voice.
 
 ## Cast of Voices
 
-Voice 0 is the default voice. You can customize the voice using the selection control, and you can directly edit the pitch, rate, and volume for the voice. The available voices depend on your browser and platform.
+Voice 0 is the default voice. You can customize the voice using the selection control, and you can directly edit the pitch, rate, and volume for the voice. The available voices depend on your browser and platform, and some voices may not support changes to the pitch or rate.
 
-![Screenshot](https://dmaccarthy.github.io/js-tts/screen.png)
+![Screenshot](https://dmaccarthy.github.io/js-tts/screenshot.png)
 
 Click the first column heading labelled "Voice" to add more voices to the cast.
 
