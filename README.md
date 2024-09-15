@@ -1,10 +1,10 @@
 # js-tts
 
-This is a text-to-speech program that runs in a web browser using its built-in speechSynthesis. To get started, [open](https://dmaccarthy.github.io/js-tts/) the webpage.
+This is a simple text-to-speech program that runs in a web browser using its built-in speechSynthesis. To get started, [open](https://dmaccarthy.github.io/js-tts/) the webpage.
 
-## Script [`text` File]
+## Speaking Script
 
-To load a script, click the *Browse* button to choose a plain text file, and then click *Open* to load the file.
+To load a speaking script, click the *Browse* or *Choose File* button to choose a plain `text` file, and then click *Open* to load the file.
 
 * Each line in the file will be spoken as a single utterance.
 * Use a double hash sign to identify comments. Text following `##` on any line will be ignored.
@@ -20,11 +20,10 @@ To load a script, click the *Browse* button to choose a plain text file, and the
 This is a speech synthesis example.
 
 ## Change the current voice and the delay...
-!! v=2 & d=5
+!! v=1 & d=5
 
 ## Speak this text...
 This example is spoken in a different voice.
-
 ```
 
 * The `v` command selects a new voice number for all subsequent lines until changed.
@@ -34,9 +33,11 @@ This example is spoken in a different voice.
 
 ## Cast of Voices
 
-Voice 0 is the default voice. You can customize the voice using the selection control, and you can directly edit the pitch, rate, and volume for the voice.
+Voice 0 is the default voice. You can customize the voice using the selection control, and you can directly edit the pitch, rate, and volume for the voice. The available voices depend on your browser and platform.
 
-![Screenshot](https://dmaccarthy.github.io/js-tts/screen.png)
+<p style="text-align:center">
+    <img style="padding:6px; border:2px solid blue" src="https://dmaccarthy.github.io/js-tts/screen.png"/>
+</p>
 
 Click the first column heading labelled "Voice" to add more voices to the cast.
 
@@ -55,5 +56,4 @@ You can also load your cast of voices from a `json` file.
     ["Google UK English Female; Zira", 1, 1, 1],
     ["Mark; David", 1, 1, 1]
 ]}
-
 ```

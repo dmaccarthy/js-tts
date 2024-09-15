@@ -3,10 +3,12 @@
 body {
     font-size: 105%;
     text-align: center;
+    margin-top: 2em;
 }
 
 table {
     margin: auto;
+    margin-top: 2em;
     border-collapse: collapse;
     max-width: 98%;
 }
@@ -28,4 +30,9 @@ button {
 select {
     border: none;
     background-color: white;
+}
+
+p.Small {
+    margin-top: 2.5em;
+    font-size: 80%;
 }
