@@ -1,3 +1,23 @@
+function qsArgs(key, str) {
+    // Parse query-string formatted data
+    if (str == null) str = location.search;
+    let args = {};
+    try {
+        for (let [k, val] of new URLSearchParams(str))
+            args[k.trim()] = val;       
+    } catch(err) {
+        console.error(err);
+        let qs = str.split("?")[1];
+        if (qs == null) return key ? null : {};
+        qs = qs.split("&");
+        for (let i=0;i<qs.length;i++) {
+            let a = qs[i].split("=");
+            args[a[0].trim()] = decodeURIComponent(a[1]);
+        }
+    }
+    return key ? args[key] : args;
+}
+
 function init() {
     let voices = speechSynthesis.getVoices();
     if (voices.length == 0) setTimeout(init, 100);
