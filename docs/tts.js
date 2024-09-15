@@ -128,11 +128,11 @@ loadFile.voices = (v) => {
     for (let i=0;i<v.length;i++) {
         let td = $(tr[i]).children("td");
         let vi = v[i];
-        let namelist = vi[0].split(";");
+        let namelist = vi[0].toLowerCase().split(";");
         let sel = $(td[1]).find("select")[0];
         for (let k=0;k<namelist.length;k++) {
             for (let j=0;j<sel.options.length;j++) {
-                let name = sel.options[j].innerHTML;
+                let name = sel.options[j].innerHTML.toLowerCase();
                 if (name.search(namelist[k].trim()) > -1) {
                     sel.selectedIndex = j;
                     j = sel.options.length;
