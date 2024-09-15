@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Text-to-Speech</title>
+    <link rel="shortcut icon" type="image/svg+xml" href="../../media/speaker.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic"/>
+    <link rel="stylesheet" href="tts.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://dmaccarthy.github.io/sci/src/util.js"></script>
+    <script type="text/javascript" src="tts.js"></script>
+</head>
+<body>
+    <p>
+        <input id="File" type="file"/>
+        <button onclick="loadFile()">Open</button> &nbsp;
+        <button id="Play" onclick="play()">Play</button>
+        <button id="Stop" onclick="play.stop()">Stop</button>
+    </p>
+    <table>
+        <thead><tr>
+            <th><a href="javascript:init.voiceRow()" title="Add Voice">Voice</a></th>
+            <th>Name</th>
+            <th>Pitch</th>
+            <th>Rate</th>
+            <th>Volume</th>
+        </tr></thead>
+        <tbody id="Voices"></tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+* {font-family: "Noto Sans", sans-serif}
+
+body {
+    font-size: 105%;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    max-width: 98%;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 2px;
+    min-width: 5em;
+}
+
+th, a {color: #0065FE}
+#Stop, #Play {display: none}
+
+button {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+select {
+    border: none;
+    background-color: white;
+}
