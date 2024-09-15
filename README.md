@@ -1,2 +1,3 @@
-# js-tts
-Text-to-speech using browser speechSynthesis
+# sci
+
+This is a static website containing lesson notes and other learning resources for high school Physics, Computing Science, and General Science.
