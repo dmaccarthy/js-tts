@@ -24,6 +24,8 @@ function init() {
     else {
         init.voices = voices;
         init.voiceRow();
+        $("#Input").show().width($("table").width());
+        $("#Play, #Stop").show();
     }
 }
 
@@ -52,9 +54,9 @@ $(() => {
     play.queue = [];
     init();
     console.log(`json(replacer, space);
-append(url_array, callback)
-append.fromFolder("p30/", url_array, callback)
-$.getScript("p30/test.js")`);
+batch(url_array);
+batch.fromFolder("p30/", url_array);
+$.getScript("p30/test.js");`);
 });
 
 function say(text, v, cb) {
@@ -94,11 +96,9 @@ function play(queue) {
     if (queue == null) queue = play.queue.slice();
     if (queue.length == 0 || play.timeout === false) {
         delete play.timeout;
-        play.show(1);
         console.log("Done!");
         return;
     }
-    play.show(0);
     let [text, voice, delay] = queue[0];
     queue.splice(0, 1);
     play.timeout = setTimeout(() => {
@@ -113,12 +113,21 @@ function loadFile() {
     reader.addEventListener("loadend", () => {
         let q = loadFile.convert(reader.result);
         if (q) {
+            $("textarea").val(reader.result);
             play.queue = q;
-            lines();
+            // lines();
         }
     });
     reader.readAsText(f); 
     e.val("");
+}
+
+function loadText() {
+    let q = loadFile.convert($("textarea").val());
+    if (q) {
+        play.queue = q;
+        lines();
+    }
 }
 
 loadFile.voices = (v) => {
@@ -172,43 +181,39 @@ loadFile.convert = (text) => {
             }
         }
     }
-    play.show(1);
     return queue;
 }
 
-function _append(n, urls) {
+function _batch(n, urls) {
     if (n < urls.length) $.ajax({url: urls[n], success: (data, status, rq) => {
             let queue = loadFile.convert(data);
             play.queue = play.queue.concat(queue);
-            _append(n + 1, urls);
-        }})
-    else if (append.cb) append.cb();
-    else lines();
+            _batch(n + 1, urls);
+        }});
+    else {
+		lines();
+		if (batch.callback) batch.callback();
+	}
 }
 
-function append(urls, cb) {
-    append.cb = cb;
-    _append(0, urls);
+function batch(urls) {
+	play.queue = [];
+    _batch(0, urls);
 }
 
-append.fromFolder = (fldr, urls, cb) => {
-    let u = [];
-    for (let i=0;i<urls.length;i++) u.push(fldr + urls[i]);
-    append(u, cb);
+batch.callback = play;
+
+batch.fromFolder = (fldr, urls) => {
+    let u = [], n = urls.length;
+    for (let i=0;i<n;i++) u.push(fldr + urls[i]);
+    batch(u);
+	return `Sending ${n} requests...`;
 }
 
 play.stop = () => {
     // Stop the current playback
     clearTimeout(play.timeout);
     play.timeout = false;
-}
-
-play.show = (s) => {
-    // Display the Play or Stop button
-    let id = ["#Play", "#Stop"];
-    s = s ? 1 : 0;
-    $(id[s]).hide();
-    $(id[1 - s]).show();
 }
 
 function lines() {console.log(`${play.queue.length} lines`)}

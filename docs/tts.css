@@ -1,9 +1,13 @@
+:root{
+    --blue: #0065FE;
+    --bg: #0065FE30;
+}
+
 * {font-family: "Noto Sans", sans-serif}
 
 body {
     font-size: 105%;
     text-align: center;
-    margin-top: 2em;
 }
 
 table {
@@ -14,17 +18,31 @@ table {
 }
 
 td, th {
-    border: 1px solid black;
+    border: 1px solid var(--blue);
     padding: 2px;
     min-width: 5em;
 }
 
-th, a {color: #0065FE}
-#Stop, #Play {display: none}
+h2 {
+    color: var(--blue);
+    margin-bottom: 1.5em;
+    margin-top: 1em;
+}
+
+thead {background-color: var(--bg)}
+th, a {color: var(--blue)}
+#Stop, #Play, #File {display: none}
 
 button {
-    padding-top: 0;
-    padding-bottom: 0;
+    min-width: 5em;
+    height: 2.5em;
+    background-color: var(--bg);
+    border: 2px solid var(--blue);
+    border-radius: 6px;
+    color: var(--blue);
+    font-weight: bold;
+    margin: 0 0.4em;
+    cursor: pointer;
 }
 
 select {
@@ -35,4 +53,18 @@ select {
 p.Small {
     margin-top: 2.5em;
     font-size: 80%;
+}
+
+#Input {
+    margin: auto;
+    display: none;
+    margin-top: 2.5em;
+}
+
+textarea {
+    width: calc(100% - 6px);
+    min-height: 16em;
+    max-height: calc(100vh - 18px);
+    border: 1px solid var(--blue);
+	font-family: Consolas, "Source Code Pro", "Source Sans Pro", monospace;
 }

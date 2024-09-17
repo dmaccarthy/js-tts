@@ -11,10 +11,11 @@
     <script type="text/javascript" src="tts.js"></script>
 </head>
 <body>
-    <p>
-        <input id="File" type="file"/>
-        <button onclick="loadFile()">Open</button> &nbsp;
-        <button id="Play" onclick="play()">Play</button>
+    <h2>JavaScript Text-to-Speech</h2>
+    <p id="Buttons">
+        <button onclick="$('#File').trigger('click')">Open...</button>
+        <input id="File" type="file" oninput="loadFile()"/>
+        <button id="Play" onclick="loadText(); play()">Play</button>
         <button id="Stop" onclick="play.stop()">Stop</button>
     </p>
     <table>
@@ -27,6 +28,21 @@
         </tr></thead>
         <tbody id="Voices"></tbody>
     </table>
-    <p class="Small">© 2024 by D.G. MacCarthy. Documentation on <a target="GitHubRepo" href="https://github.com/dmaccarthy/js-tts">GitHub</a>.</p>
+    <div id="Input">
+        <textarea placeholder="Enter some text">## Sample script
+
+## Set the default delay in seconds...
+!! a=1
+
+## Speak the following text...
+This is a speech synthesis example, spoken by voice 0.
+
+## Change the current voice and the delay...
+!! v=1 & d=2
+
+## Speak the following text...
+This example is spoken by voice 1.</textarea>
+    </div>
+    <p class="Small">© 2024 by D.G. MacCarthy. Documentation on <a target="GitHubRepo" href="https://github.com/dmaccarthy/js-tts">GitHub</a>.
 </body>
 </html>
