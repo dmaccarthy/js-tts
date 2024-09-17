@@ -6,11 +6,11 @@ This is a simple text-to-speech program that runs in a web browser using its bui
 
 ## Speaking Script
 
-Type your script into the text area, or upload a plain text file by clicking the *Browse* or *Choose File* button and then clicking *Open*.
+Type your script into the text area, or upload a plain text file by clicking the *Open* button.
 
 * Each line will be spoken as a single utterance.
 * Use a double hash sign to identify comments. Text following `##` on any line will be ignored.
-* A double exclamation mark `!!` at the start of line denotes a command that uses "query string" format. 
+* A double exclamation mark `!!` at the start of a line denotes a command that uses “query string” format. 
 * The `v` command selects a new voice number for all subsequent lines until changed.
 * The `d` command sets the delay time in seconds before speaking, for the next line only.
 * The `a` command sets the delay time in seconds for all subsequent lines where `d` is not specified.
