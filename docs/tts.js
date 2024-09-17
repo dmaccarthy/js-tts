@@ -24,8 +24,12 @@ function init() {
     else {
         init.voices = voices;
         init.voiceRow();
-        $("#Input").show().width($("table").width());
         $("#Buttons").show();
+        let w = () => {
+            $("textarea").css({visibility: "visible"}).width($("table").width() - 6);
+        };
+        w();
+        setTimeout(w, 1500);
     }
 }
 

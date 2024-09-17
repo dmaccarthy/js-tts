@@ -55,16 +55,11 @@ p.Small {
     font-size: 80%;
 }
 
-#Input {
-    margin: auto;
-    display: none;
-    margin-top: 2.5em;
-}
-
 textarea {
     width: calc(100% - 6px);
+    visibility: hidden;
+    margin-top: 2.5em;
     min-height: 16em;
-    max-height: calc(100vh - 18px);
     border: 1px solid var(--blue);
 	font-family: Consolas, "Source Code Pro", "Source Sans Pro", monospace;
 }
