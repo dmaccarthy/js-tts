@@ -31,7 +31,7 @@ h2 {
 
 thead {background-color: var(--bg)}
 th, a {color: var(--blue)}
-#Stop, #Play, #File {display: none}
+#Buttons, #File {display: none}
 
 button {
     min-width: 5em;

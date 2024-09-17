@@ -25,7 +25,7 @@ function init() {
         init.voices = voices;
         init.voiceRow();
         $("#Input").show().width($("table").width());
-        $("#Play, #Stop").show();
+        $("#Buttons").show();
     }
 }
 
@@ -214,6 +214,19 @@ play.stop = () => {
     // Stop the current playback
     clearTimeout(play.timeout);
     play.timeout = false;
+}
+
+play.save = (fn) => {
+    let blob = new Blob([$("textarea").val()], {type: "text/plain"});
+    let url = URL.createObjectURL(blob);
+    if (fn === true) {
+        fn = new Date().toString().substring(4, 24);
+        fn = fn.replaceAll(":", "").replaceAll(" ", "");
+        fn = fn.toLowerCase() + ".txt";
+    }
+    let a = $("<a>").attr({href: url, download: fn});
+    if (fn == null) a.attr({target: "js-tts-text"});
+    a[0].click();
 }
 
 function lines() {console.log(`${play.queue.length} lines`)}

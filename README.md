@@ -15,6 +15,7 @@ Type your script into the text area, or upload a plain text file by clicking the
 * The `d` command sets the delay time in seconds before speaking, for the next line only.
 * The `a` command sets the delay time in seconds for all subsequent lines where `d` is not specified.
 * Click the *Play* button to begin speaking.
+* Click the *Save* button to download the script as a plain text file.
 
 ## Cast of Voices
 
@@ -22,7 +23,7 @@ Voice 0 is the default voice. You can customize the voice using the selection co
 
 Click the first column heading labelled "Voice" to add more voices to the cast.
 
-You can also load your cast of voices from a `json` file.
+You can also use the *Open* button to load your cast of voices from a `json` file.
 
 * Create the file with a key named `cast` that describes an array of voices.
 * Each voice description is an array with four values.
