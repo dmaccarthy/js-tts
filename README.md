@@ -2,7 +2,7 @@
 
 This is a simple text-to-speech program that runs in a web browser using its built-in speechSynthesis. To get started, [open](https://dmaccarthy.github.io/js-tts/) the webpage.
 
-![Screenshot](https://dmaccarthy.github.io/js-tts/screen.png)
+![Screenshot](https://dmaccarthy.github.io/js-tts/screen01.png)
 
 ## Speaking Script
 
@@ -10,7 +10,7 @@ Type your script into the text area, or upload a plain text file by clicking the
 
 * Each line will be spoken as a single utterance.
 * Use a double hash sign to identify comments. Text following `##` on any line will be ignored.
-* A double exclamation mark `!!` at the start of a line denotes a command that uses “query string” format. 
+* A double exclamation mark `!!` at the start of a line denotes a command that uses “query string” format.
 * The `v` command selects a new voice number for all subsequent lines until changed.
 * The `d` command sets the delay time in seconds before speaking, for the next line only.
 * The `a` command sets the delay time in seconds for all subsequent lines where `d` is not specified.
@@ -21,7 +21,7 @@ Type your script into the text area, or upload a plain text file by clicking the
 
 Voice 0 is the default voice. You can customize the voice using the selection control, and you can directly edit the pitch, rate, and volume for the voice. The available voices depend on your browser and platform, and some voices may not support changes to the pitch or rate.
 
-Click the first column heading labelled "Voice" to add more voices to the cast.
+Click the *Voice* button to add more voices to the cast.
 
 You can also use the *Open* button to load your cast of voices from a `json` file.
 

@@ -16,13 +16,14 @@
     <p id="Buttons">
         <button onclick="$('#File').trigger('click')"><span class="material-symbols-outlined">file_open</span><br/>Open...</button>
         <input id="File" type="file" oninput="loadFile()"/>
+        <button onclick="init.voiceRow()"><span class="material-symbols-outlined">person_add</span><br/>Voice</button>
         <button onclick="loadText(); play()"><span class="material-symbols-outlined">play_circle</span><br/>Play</button>
         <button onclick="play.stop()"><span class="material-symbols-outlined">stop_circle</span><br/>Stop</button>
         <button onclick="play.save(true)"><span class="material-symbols-outlined">save</span><br/>Save</button>
     </p>
     <table>
         <thead><tr>
-            <th><a href="javascript:init.voiceRow()" title="Add Voice">Voice</a></th>
+            <th>Voice</th>
             <th>Name</th>
             <th>Pitch</th>
             <th>Rate</th>
