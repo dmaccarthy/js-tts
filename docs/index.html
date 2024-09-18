@@ -14,12 +14,12 @@
 <body>
     <h2>JavaScript Text-to-Speech</h2>
     <p id="Buttons">
-        <button onclick="$('#File').trigger('click')"><span class="material-symbols-outlined">file_open</span><br/>Open...</button>
+        <button title="Open a plain text speaking script, or a cast of voices as JSON" onclick="$('#File').trigger('click')"><span class="material-symbols-outlined">file_open</span><br/>Open...</button>
         <input id="File" type="file" oninput="loadFile()"/>
-        <button onclick="init.voiceRow()"><span class="material-symbols-outlined">person_add</span><br/>Voice</button>
-        <button onclick="loadText(); play()"><span class="material-symbols-outlined">play_circle</span><br/>Play</button>
-        <button onclick="play.stop()"><span class="material-symbols-outlined">stop_circle</span><br/>Stop</button>
-        <button onclick="play.save(true)"><span class="material-symbols-outlined">save</span><br/>Save</button>
+        <button title="Add a new voice to the cast" onclick="init.voiceRow()"><span class="material-symbols-outlined">person_add</span><br/>Voice</button>
+        <button title="Play the speaking script" onclick="loadText(); play()"><span class="material-symbols-outlined">play_circle</span><br/>Play</button>
+        <button title="Stop playback after the current utterance" onclick="play.stop()"><span class="material-symbols-outlined">stop_circle</span><br/>Stop</button>
+        <button title="Save the speaking script as plain text" onclick="play.save(true)"><span class="material-symbols-outlined">save</span><br/>Save</button>
     </p>
     <table>
         <thead><tr>
