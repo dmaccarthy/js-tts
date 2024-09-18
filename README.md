@@ -2,7 +2,7 @@
 
 This is a simple text-to-speech program that runs in a web browser using its built-in speechSynthesis. To get started, [open](https://dmaccarthy.github.io/js-tts/) the webpage.
 
-![Screenshot](https://dmaccarthy.github.io/js-tts/screen02.png)
+![Screenshot](https://dmaccarthy.github.io/js-tts/screen.png)
 
 ## Speaking Script
 

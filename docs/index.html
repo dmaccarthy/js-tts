@@ -6,6 +6,7 @@
     <title>Text-to-Speech</title>
     <link rel="shortcut icon" type="image/svg+xml" href="speaker.svg" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="tts.css"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="tts.js"></script>
@@ -13,11 +14,11 @@
 <body>
     <h2>JavaScript Text-to-Speech</h2>
     <p id="Buttons">
-        <button onclick="$('#File').trigger('click')">Open...</button>
+        <button onclick="$('#File').trigger('click')"><span class="material-symbols-outlined">file_open</span><br/>Open...</button>
         <input id="File" type="file" oninput="loadFile()"/>
-        <button id="Play" onclick="loadText(); play()">Play</button>
-        <button id="Stop" onclick="play.stop()">Stop</button>
-        <button id="Save" onclick="play.save(true)">Save</button>
+        <button onclick="loadText(); play()"><span class="material-symbols-outlined">play_circle</span><br/>Play</button>
+        <button onclick="play.stop()"><span class="material-symbols-outlined">stop_circle</span><br/>Stop</button>
+        <button onclick="play.save(true)"><span class="material-symbols-outlined">save</span><br/>Save</button>
     </p>
     <table>
         <thead><tr>
