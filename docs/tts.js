@@ -57,8 +57,7 @@ init.voiceRow = () => {
 $(() => {
     play.queue = [];
     init();
-    console.log(`json(replacer, space);
-batch(url_array);
+    console.log(`batch(url_array);
 batch.fromFolder("p30/", url_array);
 $.getScript("p30/test.js");`);
 });
@@ -119,7 +118,6 @@ function loadFile() {
         if (q) {
             $("textarea").val(reader.result);
             play.queue = q;
-            // lines();
         }
     });
     reader.readAsText(f); 
@@ -220,18 +218,31 @@ play.stop = () => {
     play.timeout = false;
 }
 
-play.save = (fn) => {
-    let blob = new Blob([$("textarea").val()], {type: "text/plain"});
-    let url = URL.createObjectURL(blob);
-    if (fn === true) {
-        fn = new Date().toString().substring(4, 24);
-        fn = fn.replaceAll(":", "").replaceAll(" ", "");
-        fn = fn.toLowerCase() + ".txt";
+play.save = (ev, fn) => {
+    // Save speaking script or cast of voices
+    let alt = ev.altKey, blob;
+    if (alt) {
+        let data = [];
+        let tr = $("#Voices > tr");
+        for (let i=0;i<tr.length;i++) {
+            let td = $(tr[i]).children("td");
+            let sel = $(td[1]).find("select")[0];
+            let item = [sel.options[sel.selectedIndex].text];
+            for (let c=2;c<5;c++) item.push(parseFloat($(td[c]).text()));
+            data.push(item);
+        }
+        data = {cast: data};
+        blob = new Blob([JSON.stringify(data)], {type: "application/json"});
+        if (!fn) fn = "voices.json";
     }
+    else {
+        blob = new Blob([$("textarea").val()], {type: "text/plain"});
+        if (!fn) fn = "speech.txt";
+    }
+    let url = URL.createObjectURL(blob);
     let a = $("<a>").attr({href: url, download: fn});
     if (fn == null) a.attr({target: "js-tts-text"});
     a[0].click();
 }
 
 function lines() {console.log(`${play.queue.length} lines`)}
-function json(r, s) {console.log(JSON.stringify(play.queue, r, s))}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Text-to-Speech</title>
-    <link rel="shortcut icon" type="image/svg+xml" href="speaker.svg" />
+    <title>JavaScript Text-to-Speech</title>
+    <link rel="shortcut icon" type="image/svg+xml" href="img/speaker.svg" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="tts.css"/>
@@ -14,12 +14,13 @@
 <body>
     <h2>JavaScript Text-to-Speech</h2>
     <p id="Buttons">
-        <button title="Open a plain text speaking script, or a cast of voices as JSON" onclick="$('#File').trigger('click')"><span class="material-symbols-outlined">file_open</span><br/>Open...</button>
+        <button title="Open a speaking script (txt) or a cast of voices (json)" onclick="$('#File').trigger('click')"><span class="material-symbols-outlined">file_open</span><br/>Open...</button>
         <input id="File" type="file" oninput="loadFile()"/>
         <button title="Add a new voice to the cast" onclick="init.voiceRow()"><span class="material-symbols-outlined">person_add</span><br/>Voice</button>
         <button title="Play the speaking script" onclick="loadText(); play()"><span class="material-symbols-outlined">play_circle</span><br/>Play</button>
         <button title="Stop playback after the current utterance" onclick="play.stop()"><span class="material-symbols-outlined">stop_circle</span><br/>Stop</button>
-        <button title="Save the speaking script as plain text" onclick="play.save(true)"><span class="material-symbols-outlined">save</span><br/>Save</button>
+        <button title="Save the speaking script; or hold the Alt key to save the cast" onclick="play.save(event)"><span class="material-symbols-outlined">save</span><br/>Save</button>
+        <a href="help.html"><button title="Go to the Help page"><span class="material-symbols-outlined">help</span><br/>Help</button></a>
     </p>
     <table>
         <thead><tr>
@@ -33,7 +34,7 @@
     </table>
     <textarea placeholder="Enter some text">## Sample script
 
-## Set the default delay in seconds...
+## Set the automatic delay in seconds...
 !! a=1
 
 ## Speak the following text...
@@ -44,6 +45,6 @@ This is a speech synthesis example, spoken by voice 0.
 
 ## Speak the following text...
 This example is spoken by voice 1.</textarea>
-    <p class="Small">© 2024 by D.G. MacCarthy. Documentation on <a target="GitHubRepo" href="https://github.com/dmaccarthy/js-tts">GitHub</a>.
+    <p class="Small">© 2024 by D.G. MacCarthy.
 </body>
 </html>
