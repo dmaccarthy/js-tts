@@ -33,9 +33,19 @@ thead {background-color: var(--bg)}
 th, a {color: var(--blue)}
 #Buttons, #File {display: none}
 
+#Buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+    margin: auto;
+}
+
 button {
     padding: 4px;
-    margin: 0 0.4em;
+    margin: 0 0.4em 1em 0.4em;
     font-size: 75%;
     color: var(--blue);
     width: 5em;
@@ -66,7 +76,7 @@ p.Small {
 }
 
 textarea {
-    width: calc(100% - 6px);
+    max-width: 98%;
     visibility: hidden;
     margin-top: 2.5em;
     min-height: 16em;
